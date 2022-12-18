@@ -1,0 +1,235 @@
+.page-header {
+    border-bottom: 1px solid rgba(236, 236, 236, 1);
+    position: relative;
+}
+
+.menu-containers{
+    @media screen and (max-width:767px) {
+        display: none;
+        
+    }
+}
+
+.flex-logo{
+    display: flex;
+}
+
+.menu-button {
+    display: inline-flex;
+    margin: 0;
+    padding: 0;     
+    border: none;
+    background-color: transparent;   
+    vertical-align:middle; 
+    margin-left: 264px;
+}
+.menu-button:hover .icon-button,
+.menu-button:focus {
+    fill: $hover-color;
+    cursor: pointer;
+}
+
+.main-nav {
+    margin-top: 10px;       
+}
+.menu-button .icon-cross {
+    display: none;
+}
+.menu-button.is-open .icon-cross {
+    display: block;
+}
+.menu-button.is-open .icon-menu {
+    display: none;
+}
+.menu-container {
+
+    @media (max-width:767px) {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0%;
+        width: 480px;
+        height: 900px;
+
+        transform: translateY(-1%);
+        
+
+        &.is-open {
+                display: block;
+                z-index: 10;
+            }       
+    }  
+    width: 100%;
+    padding-bottom: 60px;
+    
+    background: rgba(255, 255, 255, 1);
+  
+    font-weight: 500;
+    font-size: 18px;
+    line-height:1.17;
+    letter-spacing: 0.02em;
+    
+}
+
+.contact-list{
+    @media  screen and (max-width:760px){
+
+    margin-top: 302px;
+    margin-left: 40px;
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 500;
+font-size: 34px;
+line-height: 40px;
+/* identical to box height */
+
+letter-spacing: 0.02em;
+
+color: #2196F3;
+        
+    }
+
+}
+
+.main-nav__link {
+    display: inline-block;
+    color: $main-text-color;
+    @media screen and (max-width:760px) {
+        margin-left: 40px;
+        width: 219px;
+height: 48px;
+font-size: 40px;  
+    }
+}
+.main-nav__link:hover,
+.main-nav__link:focus,
+.contact-list__link:hover,
+.contact-list__link:focus {
+    color: $hover-color;
+} 
+.main-nav__item:hover .main-nav__link::after
+{
+    content:"";
+    display: block;
+    height:4px;    
+    background-color: $hover-color;
+    border-radius: 2px; 
+    margin-top:8px;       
+}
+.contact-list__icon {
+    fill: $secondary-text-color;
+}
+.contact-list__link:hover .contact-list__icon,
+.contact-list__link:focus .contact-list__icon {
+    fill: $hover-color;
+}
+.contact-list__link
+ {
+    color: $secondary-text-color;    
+}
+.main-nav__item:not(:last-child) {
+    margin-bottom: 40px;
+}
+.contact-list__item:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+@media (min-width:768px) {
+    .menu-button {
+        display: none;
+    }
+    
+    .menu-container {
+        display: inline-flex;  
+        align-items:center;         
+        padding-bottom: 0;         
+        box-shadow: none; 
+        
+        font-weight: 500;
+        font-size: 14px;  
+        
+    }
+    .main-nav {
+        display: inline-flex;  
+        align-items:center;
+        margin-top: 0;
+        }
+    .main-nav__list {
+        display: inline-flex;
+        margin-top: 0;
+        margin-left:81px;
+    }
+    .contact-list {
+        display: inline-flex;
+        flex-direction: column; 
+        margin-top: 0;  
+        margin-left:84px;
+        
+        font-size: 12px;
+    }
+    .main-nav__item {   
+          
+        
+        position: relative;  
+        display: inline-flex;
+        padding-bottom: 32px;  
+        padding-top: 32px;         
+            
+            &:not(:last-child) {
+                margin-bottom: 0px;
+                margin-right:50px;
+            }
+    }
+    .contact-list__item {
+            display: inline-flex;            
+
+            &:not(:last-child) {
+                margin-bottom:10px;
+            }
+    }
+    .main-nav__item:hover .main-nav__link::after {
+        display: none;
+    }
+    .contact-list__icon {
+        vertical-align:middle;
+        margin-right: 8px;
+    }
+    .contact-list__link {
+       display: inline-flex;           
+    }
+    .main-nav__item:hover .main-nav__link--current::after,
+    .main-nav__link--current::after
+     {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        content: "";
+        display: block;
+        height: 4px;
+        width: 100%;
+        background-color: $hover-color;
+        border-radius: 2px;        
+    }
+    
+}
+@media (min-width:1200px) {
+    .main-nav__list {           
+            margin-left: 86px;
+        }
+    .contact-list {
+        flex-direction: row;
+        margin-left: 305px;
+    }
+    .contact-list__item + .contact-list__item {
+        margin-left: 30px;
+    }
+    .contact-list__link {
+        font-size: 14px;
+    }
+    .menu-container {
+        align-items: baseline;  
+        }
+
+
+}

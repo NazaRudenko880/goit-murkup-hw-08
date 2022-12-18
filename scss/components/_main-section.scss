@@ -1,0 +1,370 @@
+.main-section { 
+    
+
+    width: 480px;
+    height: 400px;
+    background-color: rgb(0, 0, 0);
+    background-image:
+        linear-gradient(to right,
+            rgba(47, 48, 58, 0.8),
+            rgba(47, 48, 58, 0.8)),
+        url("/images/header.jpg");
+    background-size: 480px 400px;      
+    text-align: center;    
+}
+ @media screen and (min-device-pixel-ratio: 2), 
+ screen and (min-resolution: 192dpi),
+ screen and (min-resolution: 2dppx) {
+    .main-section {
+        background-image:
+        linear-gradient(to right,
+                rgba(47, 48, 58, 0.8),
+                rgba(47, 48, 58, 0.8)),
+        url("/images/header@2x.jpg");
+    }    
+ }
+ @media (min-width:768px) {
+    .main-section {
+            width: 768px;                       
+            background-image:
+                linear-gradient(to right,
+                    rgba(47, 48, 58, 0.8),
+                    rgba(47, 48, 58, 0.8)),
+                url("/images/header_768.jpg");
+            background-size: 768px 400px;            
+        }
+@media screen and (min-device-pixel-ratio: 2),
+screen and (min-resolution: 192dpi),
+screen and (min-resolution: 2dppx) {
+    .main-section {
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.8),
+                rgba(47, 48, 58, 0.8)),
+            url("/images/header_768@2x.jpg");
+    }
+}    
+ } 
+@media (min-width:1200px) {
+    .main-section {
+        width: 100%;
+        
+        height: 600px;
+    
+        
+        background-image:
+            linear-gradient(to right,
+                rgba(47, 48, 58, 0.8),
+                rgba(47, 48, 58, 0.8)),
+            url("/images/header_1600.jpg");
+        background-size: 1600px 600px;
+    }
+
+    @media screen and (min-device-pixel-ratio: 2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .main-section {
+            background-image:
+                linear-gradient(to right,
+                    rgba(47, 48, 58, 0.8),
+                    rgba(47, 48, 58, 0.8)),
+                url("/images/header_1600@2x.jpg");
+        }
+    }
+}
+.main-section__title {
+    display: block;
+    width: 360px;
+    margin: 0 auto;
+    padding-top: 118px;
+    padding-bottom: 30px;
+
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.61em;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: $dark-theme-color;
+}
+.button {
+    padding : 10px 32px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: $dark-theme-color;
+    background-color: $hover-color;
+    cursor: pointer;
+}
+/* form */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%; 
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 1;
+    z-index: 2;    
+   
+    transition: opacity 250ms $mainAnimation;
+
+    @media (max-width:767px) {
+        padding-top: 93px;
+    }
+    &.is-hidden {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.modal {   
+    width: 450px;
+    height: 609px;  
+
+    background-color: #fff;
+
+    @media (max-width:767px) {
+        position: relative;
+        margin: 0 auto;
+    }
+}
+.fedback-form {
+    width: 370px;
+    height: 40px;
+    padding-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.fedback-form__field {
+    position: relative;
+}
+.fedback-form__caption {
+    margin-bottom:30px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
+%formPading {
+    padding: 12px 42px;
+}
+
+.fedback-form__input {
+    width: 370px;
+    height: 40px;
+    margin-bottom: 28px;
+
+    @include bordered(rgba(33, 33, 33, 0.2));
+    border-radius: 4px;
+
+    @extend %formPading;
+}
+.fedback-form__label {
+    position: absolute;
+    top: 12px;
+    left: 42px;
+
+    letter-spacing: 0.01em;
+    color: $secondary-text-color;
+}
+.fedback-form__icon {
+    position: absolute;
+    top:14px;
+    left:19px;
+}
+.fedback-form__input:focus+.fedback-form__label,
+.fedback-form__input:not(:placeholder-shown) + .fedback-form__label,
+.fedback-form__comments:focus+.fedback-form__label-coments,
+.fedback-form__comments:not(:placeholder-shown)+.fedback-form__label-coments
+ {
+    font-size: 12px;
+    line-height: 1.14;
+    color: $hover-color;
+}
+.fedback-form__input:focus+.fedback-form__label,
+.fedback-form__input:not(:placeholder-shown)+.fedback-form__label
+ {
+    transform: translate(-26px, -32px);}
+
+.fedback-form__input:focus,
+.fedback-form__comments:focus
+ {
+     @include bordered ($hover-color);
+     outline: 1px solid $hover-color;
+}
+.fedback-form__input:focus ~ .fedback-form__icon {
+    fill: $hover-color;
+}
+.fedback-form__comments:focus+.fedback-form__label-coments,
+.fedback-form__comments:not(:placeholder-shown)+.fedback-form__label-coments {
+    transform: translate(0, -32px);
+}
+
+.fedback-form__comments {    
+    width: 370px;
+    height: 120px;
+    resize: none;
+
+    margin-bottom:20px;
+    @extend %formPading;
+
+    @include bordered(rgba(33, 33, 33, 0.2));
+    border-radius: 4px;    
+}
+.fedback-form__label-coments {
+    position: absolute;
+    top: 12px;
+    left: 16px;
+    color: $secondary-text-color;
+}
+.agreement {
+    position: relative;
+
+    display: inline-block;
+    width: inherit;
+
+    margin-bottom:31px;
+}
+.agreement__label {    
+    margin-left: 16px;
+    font-size: 12px;
+    letter-spacing: 0.03em;
+    color: $secondary-text-color;
+
+}
+.agreement__checkbox {
+    appearance: none;
+    position: absolute; 
+}
+.agreement__checkbox:checked ~ .agreement__icon {
+    background-image: url(../images/icon_check.svg);
+    background-size: contain;
+    background-position: center;
+    background-color: rgba(33, 150, 243, 1);
+    background-origin: border-box;
+    border-color: rgba(33, 150, 243, 1);
+    }
+
+
+.agreement__link {
+    color: $hover-color;
+    text-decoration: underline;
+}
+.agreement__icon {    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    width: 16px;
+    height: 15px;
+    border: 2px solid #212121;
+    border-radius: 4px;
+}
+.fedback-form__button {
+    width: 200px;
+    height: 50px;
+}
+
+.button-closed {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+    vertical-align:center;
+
+    border-radius: 50%;
+
+    @include bordered(rgba(0, 0, 0, 0.1));
+    
+    background-color: transparent;
+}
+.button-closed__icon {
+    width: 25px;
+    height: 25px;    
+}
+.button-closed__icon:hover,
+.button-closed__icon:focus {
+    fill: $hover-color;
+    cursor: pointer;
+}
+
+
+@media (min-width:768px) {
+    .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+@media (min-width:1200px) {
+      .main-section {
+        height: 600px;
+      }
+      .main-section__title {
+        width:696px;
+        padding-top: 200px;
+        font-size: 44px;
+        line-height: 1.36;        
+      }
+      .main-section__button {
+        font-weight: 700;
+      }
+    .modal {
+              width: 528px;
+              height: 581px;    
+    }
+    .fedback-form {
+            width: 448px;            
+            padding-top: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    .fedback-form__caption {
+        line-height: 1.15;
+    }
+    .fedback-form__input {
+            width: 448px;           
+    }
+    .fedback-form__comments {
+            width: 448px;
+    }
+    .agreement {
+        display: inline-flex;        
+        }
+    .agreement__icon {
+        left: 11px;
+        top: 3px;
+       
+    }
+    .agreement__label {
+        margin-left: 36px;
+        font-size: 14px;
+        line-height: 1.71;
+    }
+    .fedback-form__button {
+        font-weight: 700;
+        
+    }
+
+
+}
+
+

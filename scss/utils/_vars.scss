@@ -1,0 +1,19 @@
+$main-text-color: #212121;
+$secondary-text-color: #757575;
+$hover-color: #2196F3;
+$dark-theme-color: #ffffff;
+$text-footer: rgba(255, 255, 255, 0.6);
+
+$logoFont: "Raleway", sans-serif;
+$mainFont: "Roboto", sans-serif;
+
+$mainAnimation: cubic-bezier(0.4, 0, 0.2, 1);
+
+%title {
+    margin-bottom: 30px;
+    
+    font-size: 28px;
+    line-height: 1.16;
+    letter-spacing: 0.03em;
+    text-align: center;
+}
