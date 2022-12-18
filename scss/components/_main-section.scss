@@ -245,7 +245,7 @@ screen and (min-resolution: 2dppx) {
     position: absolute; 
 }
 .agreement__checkbox:checked ~ .agreement__icon {
-    background-image: url(../images/icon_check.svg);
+    background-image: url("../images/icon_check.svg");
     background-size: contain;
     background-position: center;
     background-color: rgba(33, 150, 243, 1);
